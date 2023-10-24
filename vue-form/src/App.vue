@@ -4,10 +4,10 @@ import TheHeader from './components/header.vue'
 import BaseInput from './components/BaseInput.vue';
 
 const firstName = ref("");
-const checkJiwon = () => {
+function checkJiwon() {
+  console.log(firstName.value);
   return firstName.value === "Jiwon" ? console.log("good") : console.log("bad");
 }
-
 
 </script>
 
@@ -20,8 +20,7 @@ const checkJiwon = () => {
     </header>
 
     <main >
-      <BaseInput v-model="firstName" 
-                  @submit-text="checkJiwon" />
+      <BaseInput v-model:firstName="firstName" @update:submitHandler="checkJiwon"/>
     </main>
   </div>
   

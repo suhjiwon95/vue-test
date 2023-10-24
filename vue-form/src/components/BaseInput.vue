@@ -1,24 +1,22 @@
 <script setup>
 
 defineProps({
-    label: {
+    firstName: {
         type: String,
-        default: "",
-    },
-    modelValue: {
-        type: String,
-        default: "",
+        default: ""
     }
 });
-defineEmits(['submit-text']);
+defineEmits(['update:firstName', 'update:submitHandler']);
+
+
+
 </script>
 
 <template>
     <div class="input-wrapper" >
-       
-        <label for="">{{ label }}</label>
-        <input type="text" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)">
-        <button @click="$emit('submit-text')">Submit</button>
+        <label for="">First name</label>
+        <input type="text" :value="firstName" @input="$emit('update:firstName', $event.target.value)">
+        <button @click="$emit('update:submitHandler')">Submit</button>
     </div>
 
 </template>
