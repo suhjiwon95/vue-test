@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla JS Counter App</title>
+    <style>
+        .container {
+            margin: 0 auto;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+    <div class="box">
+        <h4>The current count is</h4>
+        <h1 id="count-div">0</h1>
+        <div class="button-wrapper">
+            <button id="subtract">-</button>
+            <button id="add">+</button>
+        </div>
+        
+    </div>
+
+    <script>
+        const plusButton = document.getElementById('add');
+        const minusButton = document.getElementById('subtract');
+        const countDiv = document.getElementById('count-div');
+        let count = 0;
+
+        plusButton.addEventListener('click', () => {
+            count++;
+            countDiv.innerHTML = count;
+        })
+
+        minusButton.addEventListener('click', () => {
+            count--;
+            countDiv.innerHTML = count;
+        })
+
+    </script>
+</body>
+</html>

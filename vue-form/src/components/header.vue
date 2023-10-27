@@ -21,8 +21,9 @@ const props = defineProps({
 
  <style scoped>
     h3 {
-        width: 356px;
-        line-height: 1.25rem;
-        font-size: 16px;
+        width: 420px;
+        line-height: 1.38rem;
+        font-size: 1rem;
+        margin-top: 20px;
     }
 </style>
