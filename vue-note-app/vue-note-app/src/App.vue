@@ -1,5 +1,6 @@
 <script setup>
   import { ref } from 'vue';
+  import { RouterLink, RouterView } from 'vue-router';
 
   const showModal = ref(false);
   const newNote = ref("");
@@ -26,6 +27,7 @@
 </script>
 
 <template>
+  
   <div v-if="showModal" class="overlay">
     <div class="modal">
       
@@ -40,6 +42,12 @@
     <div class="container">
       <header>
         <h1>Notes</h1>
+        <div class="nav-wrapper">
+          <nav>
+            <RouterLink to="/about">About</RouterLink>
+          </nav>
+        </div>
+        <RouterView />
         <button @click="showModal = true">+</button>
       </header>
       <div class="cards-container">
